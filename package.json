@@ -1,0 +1,40 @@
+{
+  "name": "blog-template",
+  "version": "1.0.0",
+  "description": "Blog Template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "APP_ENV=development nodemon --ext md,ts,tsx,json --watch entries/ --watch src/ --exec 'tsx' src/build.ts",
+    "dev:draft": "APP_ENV=preview tsx --watch src/build.ts",
+    "deploy": "AWS_PROFILE=<profile> bash scripts/deploy.sh",
+    "build": "APP_ENV=production tsx src/build.ts",
+    "new:entry": "tsx scripts/scaffold.ts",
+    "image:resize": "tsx scripts/maniplate-images.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Masaki Inoue",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "heic-convert": "^2.1.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-custom-block": "^0.1.2",
+    "preact": "^10.22.1",
+    "preact-render-to-string": "^6.5.6",
+    "sharp": "^0.33.5",
+    "to-vfile": "^8.0.0",
+    "vfile-matter": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/heic-convert": "^2.1.0",
+    "@types/markdown-it": "^14.1.1",
+    "@types/node": "^20.14.11",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.9",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  }
+}
