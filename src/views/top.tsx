@@ -5,6 +5,7 @@ import Header from "./shared/header";
 import Footer from "./shared/footer";
 import Gtag from "./shared/gtag";
 import GlobalStyle from "./shared/global_style";
+import { config } from "../config";
 
 interface Props {
     entries: Entry[];
@@ -24,7 +25,7 @@ export default function Top({ entries }: Props) {
         });
     }
     const sortedYears = Object.keys(entriesGroups).sort((a, b) => b.localeCompare(a));
-    const title = "blog-template";
+    const title = config.title;
 
     return (
         <html>

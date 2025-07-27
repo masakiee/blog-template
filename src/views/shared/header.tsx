@@ -1,4 +1,5 @@
 import { h } from "preact";
+import { config } from "../../config";
 
 interface Props {
 }
@@ -23,7 +24,7 @@ export default ({ }: Props) => {
                     text-decoration: none;
                     color: #555;
                     "
-                >blog-template</a>
+                >{config.title}</a>
             </p>
         </header>
     )
