@@ -4,6 +4,7 @@ import Header from "./shared/header";
 import Footer from "./shared/footer";
 import Gtag from "./shared/gtag";
 import GlobalStyle from "./shared/global_style";
+import { config } from "../config";
 
 interface Props {
     entry: Entry;
@@ -22,7 +23,7 @@ export default function ({ entry }: Props) {
 
                 <meta property="og:url" content={`/entry/${entry.slug}/`} />
                 <meta property="og:title" content={entry.title} />
-                <meta property="og:site_name" content="blog-template" />
+                <meta property="og:site_name" content={config.title} />
                 {entry.thumbnailPath && (
                     <meta property="og:image" content={`${entry.thumbnailPath}`} />
                 )}
